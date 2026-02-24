@@ -29,7 +29,7 @@ function Hero() {
       <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
         <div className="space-y-6">
           <p className="text-xs uppercase tracking-[0.35em] text-copper-400">
-            Portfolio - Metrics First
+            {site.name} · Portfolio (Metrics First)
           </p>
           <h1 className="font-display text-4xl text-sand-100 sm:text-5xl lg:text-6xl">
             {site.hero.headline}
@@ -71,9 +71,8 @@ function Hero() {
             Quick context
           </p>
           <div className="mt-4 space-y-4 text-sm text-sand-200/80">
-            <p>
-              {site.name} | {site.role}
-            </p>
+            <p>{site.name}</p>
+            <p>{site.role}</p>
             <p>{site.location}</p>
             <p>
               Specialties: retention copy, social content systems, influencer
@@ -191,8 +190,8 @@ function ProofGallery() {
     <section id="portfolio" className="space-y-8">
       <SectionHeading
         eyebrow="Portfolio Proof"
-        title="Sample formats (placeholders for now)"
-        subtitle="Replace placeholders with screenshots or links when ready."
+        title="Sample formats (proof available on request)"
+        subtitle="Current blocks are labeled placeholders until real samples are added."
       />
       <div className="grid gap-6 md:grid-cols-2">
         {site.gallery.map((item) => (

@@ -77,7 +77,7 @@ export const site = {
         "Aligned social messaging on IG + LinkedIn with lifecycle themes.",
       ],
       outcome: "Push CTR improved from 0.7% to 2-3% through iterative testing.",
-      proof: "Add screenshots here (push variations, CTR snapshots)",
+      proof: "Proof placeholder: add screenshots (push variations, CTR snapshots).",
     },
     {
       slug: "giva-content-ops",
@@ -93,7 +93,7 @@ export const site = {
         "Produced Shopify product descriptions for weekly launches.",
       ],
       outcome: "Sustained high-volume publishing with consistent brand voice.",
-      proof: "Add screenshots here (calendar, campaign posts, scripts)",
+      proof: "Proof placeholder: add screenshots (calendar, campaign posts, scripts).",
     },
     {
       slug: "reshamandi-seo",
@@ -108,8 +108,8 @@ export const site = {
         "Optimized catalog copy for clarity and search intent.",
         "Aligned copy structure for faster browsing and decision-making.",
       ],
-      outcome: "Outcome: improved discoverability (replace with actual metric).",
-      proof: "Add screenshots here (SEO snippets, catalog samples)",
+      outcome: "Improved discoverability (add metric when available).",
+      proof: "Proof placeholder: add screenshots (SEO snippets, catalog samples).",
     },
     {
       slug: "nekbyjar-reels",
@@ -124,29 +124,29 @@ export const site = {
         "Developed reel concepts and launch narratives.",
         "Built WhatsApp communications, push notifications, and articles.",
       ],
-      outcome: "Outcome: improved engagement (replace with actual metric).",
-      proof: "Add screenshots here (reels, captions, WhatsApp flows)",
+      outcome: "Improved engagement (add metric when available).",
+      proof: "Proof placeholder: add screenshots (reels, captions, WhatsApp flows).",
     },
   ],
   gallery: [
     {
       title: "Push Notification Samples",
-      description: "Lifecycle hooks + copy variants (add screenshots).",
+      description: "Lifecycle hooks + copy variants (proof available on request).",
       image: "/portfolio/placeholders/push.svg",
     },
     {
       title: "Reel Script Concepts",
-      description: "High-retention hooks + VO cues (add script files).",
+      description: "High-retention hooks + VO cues (proof available on request).",
       image: "/portfolio/placeholders/reels.svg",
     },
     {
       title: "Caption & Grid Copy",
-      description: "Brand voice samples (add posts).",
+      description: "Brand voice samples (proof available on request).",
       image: "/portfolio/placeholders/captions.svg",
     },
     {
       title: "SEO Blog + Catalog",
-      description: "SEO snippets and product descriptions (add links).",
+      description: "SEO snippets and product descriptions (proof available on request).",
       image: "/portfolio/placeholders/seo.svg",
     },
   ],
@@ -167,8 +167,8 @@ export const site = {
   contact: {
     email: "being.chanchalv@gmail.com",
     location: "Bengaluru, India",
-    linkedinLabel: "LinkedIn (add URL)",
-    linkedinUrl: "",
+    linkedinLabel: "LinkedIn",
+    linkedinUrl: "https://www.linkedin.com/in/chanchal-verma/",
   },
   seo: {
     title:
