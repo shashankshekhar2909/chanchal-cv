@@ -5,7 +5,7 @@ export const site = {
   hero: {
     headline: "Growth-Focused Content & Lifecycle Strategist",
     subheading:
-      "Retention Messaging • Social Content Systems • High-Volume Content Ops",
+      "Retention Messaging • Social Content Strategy • Push & SMS Campaign Copy",
     valueProp:
       "I build conversion-first messaging systems across lifecycle and social channels. Expect measurable lifts and fast, clean execution.",
     metricChips: [
@@ -108,7 +108,7 @@ export const site = {
   caseStudies: [
     {
       slug: "snapmint-retention",
-      company: "Snapmint",
+      company: "Snapmint — Retention Messaging & A/B Testing for Lifecycle Content",
       role: "Content Writer",
       period: "Oct 2023 - Jul 2024",
       focus: "Retention Messaging + A/B Testing",
@@ -125,7 +125,7 @@ export const site = {
     },
     {
       slug: "giva-content-ops",
-      company: "GIVA",
+      company: "GIVA — High Volume Social Content Operations & Planning",
       role: "Content Strategist",
       period: "Feb 2022 - Jan 2023",
       focus: "High-volume Content Ops + Campaign Planning",
@@ -141,7 +141,7 @@ export const site = {
     },
     {
       slug: "reshamandi-seo",
-      company: "Reshamandi",
+      company: "Reshamandi — SEO Content Strategy & Catalog Copy Optimization",
       role: "Creative Content Writer",
       period: "Feb 2023 - Oct 2023",
       focus: "SEO + Catalog Copy Optimization",
@@ -157,7 +157,7 @@ export const site = {
     },
     {
       slug: "nekbyjar-reels",
-      company: "Nek by JAR",
+      company: "Nek by JAR — Reels Scripting & Social Storytelling",
       role: "Content Writer",
       period: "Jul 2024 - Mar 2025",
       focus: "Reels + Social Storytelling",
@@ -180,10 +180,10 @@ export const site = {
     "Location: Bengaluru, India",
   ],
   services: [
-    "Lifecycle copy (push / WhatsApp / SMS)",
-    "Social media content systems (pillars + calendar)",
-    "Reels scripting + concepts",
-    "SEO blogs + product descriptions",
+    "Push Notification Copy & Lifecycle Messaging",
+    "WhatsApp & SMS Campaign Content",
+    "Social Media Content Strategy & Reels Scripting",
+    "SEO Content & Catalog Copy",
   ],
   contact: {
     email: "being.chanchalv@gmail.com",
@@ -196,9 +196,9 @@ export const site = {
       "mailto:being.chanchalv@gmail.com?subject=Requesting%20portfolio%20samples%20%E2%80%93%20%5BRole%5D%20at%20%5BCompany%5D&body=Hi%20Chanchal%2C%0AI'm%20requesting%20portfolio%20samples%20for%3A%0A%5B%20%5D%20Lifecycle%0A%5B%20%5D%20Social%2FReels%0A%5B%20%5D%20SEO%2FCatalog%0A%5B%20%5D%20Influencer%0A%0A%E2%80%94%20%5BName%5D",
   },
   seo: {
-    title: "Chanchal Verma · Portfolio",
+    title: "Chanchal Verma — Content & Lifecycle Strategist | Push, Social, SEO",
     description:
-      "Metrics-first portfolio for Chanchal Verma, a copywriter and social media strategist specializing in lifecycle messaging, retention, and social content systems.",
+      "Portfolio of Chanchal Verma — Digital Content Strategist specializing in lifecycle content, retention messaging, push notification copy, social strategy, and SEO content for fintech, D2C, and fashion brands.",
     ogImage: "/og-image.svg",
   },
 };

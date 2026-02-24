@@ -84,9 +84,9 @@ function Hero() {
           <h1 className="font-display text-4xl text-sand-100 sm:text-5xl lg:text-6xl">
             {site.hero.headline}
           </h1>
-          <p className="text-sm uppercase tracking-[0.25em] text-sand-200/80">
+          <h2 className="text-sm uppercase tracking-[0.25em] text-sand-200/80">
             {site.hero.subheading}
-          </p>
+          </h2>
           <p className="max-w-2xl text-lg text-sand-200/90">
             {site.hero.valueProp}
           </p>
@@ -146,7 +146,7 @@ function ResultsSnapshot() {
     <section id="results" className="space-y-8">
       <SectionHeading
         eyebrow="Results Snapshot"
-        title="Highlights from lifecycle, social, SEO, and influencer work."
+        title="Results Snapshot — Engagement Growth & Messaging Outcomes"
       />
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {site.resultsSnapshot.map((item) => (
@@ -234,7 +234,7 @@ function CaseStudies() {
     <section id="case-studies" className="space-y-8">
       <SectionHeading
         eyebrow="Case Studies"
-        title="Problem -> Action -> Outcome"
+        title="Case Studies — Content Strategy & Lifecycle Wins"
         subtitle="Selected projects and outcomes."
       />
       <div className="grid gap-6 md:grid-cols-2">
@@ -299,7 +299,7 @@ function ProofGallery() {
     <section id="portfolio" className="space-y-8">
       <SectionHeading
         eyebrow="Portfolio Proof"
-        title="Proof available on request"
+        title="Portfolio Proof — Push, Reels, SEO Samples"
         subtitle="Samples can be shared privately depending on brand permissions."
       />
       <div className="surface rounded-3xl p-6">
@@ -330,9 +330,12 @@ function About() {
     <section id="about" className="space-y-6">
       <SectionHeading
         eyebrow="About"
-        title="I’m a copywriter and content strategist focused on retention and social storytelling."
+        title="About — Digital Content & Social Media Expert"
       />
       <div className="surface rounded-3xl p-6">
+        <p className="mb-4 text-sm text-sand-200/80">
+          I’m a copywriter and content strategist focused on retention and social storytelling.
+        </p>
         <ul className="grid gap-3 text-sm text-sand-200/80 md:grid-cols-2">
           {site.about.map((item) => (
             <li key={item} className="flex items-start gap-2">
@@ -351,7 +354,7 @@ function Services() {
     <section id="services" className="space-y-6">
       <SectionHeading
         eyebrow="Services"
-        title="Ways I plug into teams"
+        title="Services — Lifecycle Messaging, Social Content, SEO Strategy"
       />
       <div className="grid gap-4 md:grid-cols-2">
         {site.services.map((service) => (

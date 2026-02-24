@@ -26,12 +26,25 @@ export const metadata: Metadata = {
     images: [site.seo.ogImage],
   },
   keywords: [
-    "copywriter",
     "content strategist",
-    "social media strategist",
-    "retention marketing",
-    "lifecycle messaging",
     "content strategy",
+    "lifecycle content specialist",
+    "retention messaging specialist",
+    "social media content strategist",
+    "digital content strategist",
+    "push notification copy",
+    "whatsapp campaign messaging",
+    "sms marketing content",
+    "reels scripting",
+    "social content operations",
+    "seo content strategy",
+    "catalog copywriter",
+    "engagement growth",
+    "a/b testing messaging",
+    "high volume content planning",
+    "d2c content expert",
+    "fintech content specialist",
+    "fashion & lifestyle content strategist",
   ],
 };
 
@@ -43,6 +56,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${body.variable} ${display.variable}`}>
       <body className="bg-ink-900 text-sand-100 antialiased">
+        <Script id="schema-person" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: site.name,
+            url: "https://beingchanchal.com",
+            sameAs: [site.contact.linkedinUrl, "https://beingchanchal.com"],
+            jobTitle: [
+              "Content Strategist",
+              "Lifecycle Content Specialist",
+              "Social Media Content Strategist",
+            ],
+          })}
+        </Script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4KL2L6RSXJ"
           strategy="afterInteractive"
