@@ -141,8 +141,7 @@ function ResultsSnapshot() {
     <section id="results" className="space-y-8">
       <SectionHeading
         eyebrow="Results Snapshot"
-        title="Proof-heavy highlights recruiters can scan fast"
-        subtitle="Only verified metrics are listed. Everything else is clearly marked as available on request."
+        title="Highlights from lifecycle, social, SEO, and influencer work."
       />
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {site.resultsSnapshot.map((item) => (
@@ -171,10 +170,10 @@ function Skills() {
     <section id="skills" className="space-y-8">
       <SectionHeading
         eyebrow="Skills"
-        title="Keyword coverage recruiters scan for"
-        subtitle="Tight set focused on copy, lifecycle, and social systems."
+        title="Core skills"
+        subtitle="Copy, lifecycle messaging, social systems, and content operations."
       />
-      <div className="flex flex-wrap gap-3">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {site.skills.map((skill) => (
           <span
             key={skill}
@@ -231,7 +230,7 @@ function CaseStudies() {
       <SectionHeading
         eyebrow="Case Studies"
         title="Problem -> Action -> Outcome"
-        subtitle="Each case links to a quick detail block with proof placeholders for screenshots."
+        subtitle="Selected projects and outcomes."
       />
       <div className="grid gap-6 md:grid-cols-2">
         {site.caseStudies.map((study) => (
@@ -325,7 +324,7 @@ function About() {
     <section id="about" className="space-y-6">
       <SectionHeading
         eyebrow="About"
-        title="Short, skimmable, recruiter-friendly"
+        title="I’m a copywriter and content strategist focused on retention and social storytelling."
       />
       <div className="surface rounded-3xl p-6">
         <ul className="grid gap-3 text-sm text-sand-200/80 md:grid-cols-2">

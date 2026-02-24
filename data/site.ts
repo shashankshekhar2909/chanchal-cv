@@ -150,7 +150,7 @@ export const site = {
       actions: [
         "Produced SEO blogs and product descriptions for key categories.",
         "Optimized catalog copy for clarity and search intent.",
-        "Aligned keyword usage with conversion-focused copy structure.",
+        "Aligned search intent with conversion-focused copy structure.",
         "Refined category messaging for easier discovery paths.",
       ],
       outcome: "Engagement improved (metric available on request).",
@@ -175,11 +175,9 @@ export const site = {
   ],
   about: [
     "Industries: D2C, fintech, fashion, lifestyle",
-    "Strengths: retention copy, narrative systems, social-first storytelling",
+    "Strengths: retention copy, narrative systems, social storytelling",
     "Working style: hypothesis -> test -> iterate",
-    "Comfortable owning end-to-end content calendars",
-    "Uses AI tools for content creation + optimization",
-    "Based in Bengaluru, India",
+    "Location: Bengaluru, India",
   ],
   services: [
     "Lifecycle copy (push / WhatsApp / SMS)",
