@@ -21,13 +21,13 @@
 }
 
 .decor-wrapper::before {
-  @include blob(320px, rgba(245, 158, 11, 0.35));
+  @include blob(320px, rgba(199, 140, 59, 0.25));
   top: -60px;
   right: -90px;
 }
 
 .decor-wrapper::after {
-  @include blob(280px, rgba(239, 68, 68, 0.35));
+  @include blob(280px, rgba(103, 182, 154, 0.22));
   bottom: -80px;
   left: -120px;
 }

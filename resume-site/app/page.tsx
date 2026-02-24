@@ -29,7 +29,10 @@ function Hero() {
       <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
         <div className="space-y-6">
           <p className="text-xs uppercase tracking-[0.35em] text-copper-400">
-            {site.name} · Portfolio (Metrics First)
+            {site.name} · Portfolio
+          </p>
+          <p className="font-display text-3xl text-sand-100 sm:text-4xl">
+            {site.name}
           </p>
           <h1 className="font-display text-4xl text-sand-100 sm:text-5xl lg:text-6xl">
             {site.hero.headline}
@@ -48,18 +51,24 @@ function Hero() {
           <div className="flex flex-wrap gap-4">
             <a
               href={site.hero.ctas.email}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-copper-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-ink-900 hover:bg-copper-400"
             >
               Email me
             </a>
             <a
               href={site.hero.ctas.caseStudies}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
             >
               View case studies
             </a>
             <a
               href={site.hero.ctas.resume}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-jade-400"
             >
               Download resume
@@ -289,6 +298,8 @@ function Contact() {
             </p>
             <a
               href={`mailto:${site.contact.email}?subject=Interview%20Call`}
+              target="_blank"
+              rel="noreferrer"
               className="text-lg text-sand-100 hover:text-copper-400"
             >
               {site.contact.email}
@@ -304,12 +315,16 @@ function Contact() {
         <div className="mt-6 flex flex-wrap gap-4">
           <a
             href={`mailto:${site.contact.email}?subject=Hiring%20Inquiry`}
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-berry-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:bg-berry-600"
           >
             Hire me
           </a>
           <a
             href={`mailto:${site.contact.email}?subject=Interview%20Call`}
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
           >
             Book a call
@@ -317,6 +332,8 @@ function Contact() {
           {site.contact.linkedinUrl ? (
             <a
               href={site.contact.linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-jade-400"
             >
               LinkedIn
