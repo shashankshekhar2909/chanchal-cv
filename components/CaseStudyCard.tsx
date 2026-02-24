@@ -5,9 +5,8 @@ export type CaseStudy = {
   period: string;
   focus: string;
   problem: string;
-  whatIDid: string[];
+  actions: string[];
   outcome: string;
-  proof: string;
 };
 
 export default function CaseStudyCard({ study }: { study: CaseStudy }) {
