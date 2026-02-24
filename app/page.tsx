@@ -1,6 +1,7 @@
 import SectionHeading from "@/components/SectionHeading";
 import MetricChip from "@/components/MetricChip";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import TrackLink from "@/components/TrackLink";
 import { site } from "@/data/site";
 
 const SHOW_TESTIMONIALS = false;
@@ -49,22 +50,24 @@ function PortalHeader() {
         </a>
       </nav>
       <div className="flex flex-wrap gap-3">
-        <a
+        <TrackLink
           href={site.contact.mailtoInterview}
           target="_blank"
           rel="noreferrer"
+          event="cta_header_email"
           className="inline-flex items-center justify-center rounded-full border border-white/25 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
         >
           Email
-        </a>
-        <a
+        </TrackLink>
+        <TrackLink
           href={site.hero.ctas.resume}
           target="_blank"
           rel="noreferrer"
+          event="cta_header_resume"
           className="inline-flex items-center justify-center rounded-full bg-copper-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-ink-900 hover:bg-copper-400"
         >
           Resume
-        </a>
+        </TrackLink>
       </div>
     </header>
   );
@@ -93,28 +96,30 @@ function Hero() {
             ))}
           </div>
           <div className="flex flex-wrap gap-4">
-            <a
+            <TrackLink
               href={site.hero.ctas.email}
               target="_blank"
               rel="noreferrer"
+              event="cta_email_me"
               className="inline-flex items-center justify-center rounded-full bg-copper-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-ink-900 hover:bg-copper-400"
             >
               Email me
-            </a>
+            </TrackLink>
             <a
               href={site.hero.ctas.caseStudies}
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
             >
               View case studies
             </a>
-            <a
+            <TrackLink
               href={site.hero.ctas.resume}
               target="_blank"
               rel="noreferrer"
+              event="cta_download_resume"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-jade-400"
             >
               Download resume
-            </a>
+            </TrackLink>
           </div>
         </div>
         <div className="surface rounded-3xl p-6">
@@ -305,14 +310,15 @@ function ProofGallery() {
           <li>Social calendar samples and campaign briefs.</li>
         </ul>
         <div className="mt-6">
-          <a
+          <TrackLink
             href={site.contact.mailtoSamples}
             target="_blank"
             rel="noreferrer"
+            event="cta_request_samples"
             className="inline-flex items-center justify-center rounded-full border border-white/25 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
           >
             Request samples
-          </a>
+          </TrackLink>
         </div>
       </div>
     </section>
@@ -387,14 +393,15 @@ function Contact() {
             <p className="text-xs uppercase tracking-[0.3em] text-copper-400">
               Email
             </p>
-            <a
+            <TrackLink
               href={site.contact.mailtoInterview}
               target="_blank"
               rel="noreferrer"
+              event="cta_contact_email"
               className="text-lg text-sand-100 hover:text-copper-400"
             >
               {site.contact.email}
-            </a>
+            </TrackLink>
           </div>
           <div className="space-y-2 text-sm text-sand-200/80">
             <p className="text-xs uppercase tracking-[0.3em] text-copper-400">
@@ -404,30 +411,33 @@ function Contact() {
           </div>
         </div>
         <div className="mt-6 flex flex-wrap gap-4">
-          <a
+          <TrackLink
             href={site.contact.mailtoInterview}
             target="_blank"
             rel="noreferrer"
+            event="cta_hire_me"
             className="inline-flex items-center justify-center rounded-full bg-berry-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:bg-berry-600"
           >
             Hire me
-          </a>
-          <a
+          </TrackLink>
+          <TrackLink
             href={site.contact.mailtoInterview}
             target="_blank"
             rel="noreferrer"
+            event="cta_book_call"
             className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
           >
             Book a call
-          </a>
-          <a
+          </TrackLink>
+          <TrackLink
             href={site.contact.linkedinUrl}
             target="_blank"
             rel="noreferrer"
+            event="cta_linkedin"
             className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-jade-400"
           >
             LinkedIn
-          </a>
+          </TrackLink>
         </div>
       </div>
     </section>
