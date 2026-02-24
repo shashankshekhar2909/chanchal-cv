@@ -1,172 +1,338 @@
 import SectionHeading from "@/components/SectionHeading";
-import { resume } from "@/data/resume";
+import MetricChip from "@/components/MetricChip";
+import CaseStudyCard from "@/components/CaseStudyCard";
+import { site } from "@/data/site";
 
-const accentGradient =
-  "from-accent-peach/80 via-accent-blush/70 to-accent-mint/80";
+const SHOW_TESTIMONIALS = false;
 
 export default function HomePage() {
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-14 px-4 py-14 sm:gap-20 sm:px-6 md:px-10 lg:px-0">
+    <main className="portal-shell mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-16 px-4 py-12 sm:gap-20 sm:px-6 md:px-10 lg:px-0">
+      <PortalHeader />
       <Hero />
-      <ContactAndProfile />
+      <ResultsSnapshot />
+      <Skills />
+      <Certifications />
       <div className="gradient-divider" />
-      <ExperienceTimeline />
-      <SkillsAndCerts />
-      <Education />
-      <CTA />
+      <CaseStudies />
+      <CaseStudyDetails />
+      <ProofGallery />
+      <About />
+      <Services />
+      {SHOW_TESTIMONIALS ? <Testimonials /> : null}
+      <Contact />
     </main>
+  );
+}
+
+function PortalHeader() {
+  return (
+    <header className="surface flex flex-col gap-4 rounded-3xl p-5 sm:flex-row sm:items-center sm:justify-between">
+      <div className="space-y-2">
+        <p className="text-xs uppercase tracking-[0.35em] text-copper-400">
+          {site.name}
+        </p>
+        <p className="text-sm text-sand-200/80">{site.role}</p>
+      </div>
+      <nav className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.3em] text-sand-100/80">
+        <a href="#results" className="hover:text-copper-400">
+          Results
+        </a>
+        <a href="#case-studies" className="hover:text-copper-400">
+          Case Studies
+        </a>
+        <a href="#services" className="hover:text-copper-400">
+          Services
+        </a>
+        <a href="#contact" className="hover:text-copper-400">
+          Contact
+        </a>
+      </nav>
+      <div className="flex flex-wrap gap-3">
+        <a
+          href={site.contact.mailtoInterview}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center rounded-full border border-white/25 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
+        >
+          Email
+        </a>
+        <a
+          href={site.hero.ctas.resume}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center rounded-full bg-copper-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-ink-900 hover:bg-copper-400"
+        >
+          Resume
+        </a>
+      </div>
+    </header>
   );
 }
 
 function Hero() {
   return (
-    <section className="decor-wrapper rounded-3xl bg-slate-900/40 p-6 shadow-card ring-1 ring-white/5 backdrop-blur sm:p-8">
-      <p className="text-sm uppercase tracking-[0.3em] text-accent-mint text-center sm:text-left">Portfolio Spotlight</p>
-      <h1 className="mt-4 text-center font-display text-4xl leading-tight text-white md:text-left md:text-5xl lg:text-6xl">
-        {resume.name}
-      </h1>
-      <p className="mt-3 text-center text-xl text-accent-peach md:text-left">{resume.title}</p>
-      <p className="mt-6 text-center text-lg text-slate-200 md:max-w-3xl md:text-left">{resume.profile}</p>
-      <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
-        <a
-          href="mailto:being.chanchalv@gmail.com"
-          className="rounded-full bg-gradient-to-r px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105"
-          style={{
-            backgroundImage: "linear-gradient(120deg,#f97316,#f43f5e,#8b5cf6)",
-          }}
-        >
-          Collaborate with Chanchal
-        </a>
-        <a
-          href="#experience"
-          className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white/80 backdrop-blur hover:border-accent-peach"
-        >
-          Browse Experience
-        </a>
-      </div>
-    </section>
-  );
-}
-
-function ContactAndProfile() {
-  return (
-    <section id="contact" className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-card sm:p-8">
-        <SectionHeading
-          eyebrow="Contact"
-          title="Let’s build your next signature story"
-          subtitle="Open to brand-side roles, creative studios, and collaborative freelance pods."
-        />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {resume.contact.map((item) => (
-            <div
-              key={item.label}
-              className="min-w-0 rounded-2xl border border-white/10 bg-slate-900/40 p-4"
+    <section className="decor-wrapper section-panel rounded-3xl border border-white/10 bg-white/5 p-6 shadow-card sm:p-10">
+      <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
+        <div className="space-y-6">
+          <p className="text-xs uppercase tracking-[0.35em] text-copper-400">
+            {site.name} · Portfolio
+          </p>
+          <h1 className="font-display text-4xl text-sand-100 sm:text-5xl lg:text-6xl">
+            {site.hero.headline}
+          </h1>
+          <p className="text-sm uppercase tracking-[0.25em] text-sand-200/80">
+            {site.hero.subheading}
+          </p>
+          <p className="max-w-2xl text-lg text-sand-200/90">
+            {site.hero.valueProp}
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {site.hero.metricChips.map((chip) => (
+              <MetricChip key={chip} label={chip} />
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href={site.hero.ctas.email}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-copper-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-ink-900 hover:bg-copper-400"
             >
-              <p className="text-xs uppercase tracking-widest text-white/60">
-                {item.label}
-              </p>
-              {item.href ? (
-                <a
-                  href={item.href}
-                  className="mt-2 block text-lg font-medium text-white break-words hover:text-accent-mint"
-                >
-                  {item.value}
-                </a>
-              ) : (
-                <p className="mt-2 text-lg font-medium text-white break-words">{item.value}</p>
-              )}
-            </div>
-          ))}
+              Email me
+            </a>
+            <a
+              href={site.hero.ctas.caseStudies}
+              className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
+            >
+              View case studies
+            </a>
+            <a
+              href={site.hero.ctas.resume}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-jade-400"
+            >
+              Download resume
+            </a>
+          </div>
+        </div>
+        <div className="surface rounded-3xl p-6">
+          <p className="text-xs uppercase tracking-[0.35em] text-berry-500">
+            Quick context
+          </p>
+          <div className="mt-4 space-y-4 text-sm text-sand-200/80">
+            <p>{site.name}</p>
+            <p>{site.role}</p>
+            <p>{site.location}</p>
+            <p>
+              Specialties: retention copy, social content systems, influencer
+              coordination.
+            </p>
+          </div>
         </div>
       </div>
-      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 shadow-card sm:p-8">
-        <p className="text-sm uppercase tracking-[0.3em] text-accent-peach">Profile</p>
-        <p className="mt-4 text-lg text-slate-100">{resume.heroPunchline}</p>
-        <ul className="mt-6 space-y-3 text-sm text-slate-300">
-          <li>• Social-first storylines grounded in data.</li>
-          <li>• Comfortable owning full calendars: ideation → scripting → publish.</li>
-          <li>• Builds playbooks for lifecycle messaging, reels, and influencer pods.</li>
-        </ul>
-      </div>
     </section>
   );
 }
 
-function ExperienceTimeline() {
+function ResultsSnapshot() {
   return (
-    <section id="experience" className="space-y-10">
+    <section id="results" className="space-y-8">
       <SectionHeading
-        eyebrow="Experience"
-        title="Brand chapters written so far"
-        subtitle="In-house and agency-side roles across lifestyle, D2C, fintech, and creator ecosystems."
+        eyebrow="Results Snapshot"
+        title="Proof-heavy highlights recruiters can scan fast"
+        subtitle="Only verified metrics are listed. Everything else is clearly marked as available on request."
       />
-      <div className="timeline relative space-y-10">
-        {resume.experiences.map((experience) => (
-          <article
-            key={`${experience.company}-${experience.period}`}
-            className="timeline-item rounded-3xl border border-white/10 bg-slate-900/40 p-5 shadow-card sm:p-6"
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {site.resultsSnapshot.map((item) => (
+          <div
+            key={item.title}
+            className="surface rounded-3xl p-6"
           >
-            <div className="flex flex-wrap items-center justify-between gap-3 text-sm uppercase tracking-widest text-white/60">
-              <span>{experience.company}</span>
-              <span>{experience.period}</span>
-            </div>
-            <h3 className="mt-4 font-display text-2xl text-white">{experience.role}</h3>
-            <p className="mt-3 text-base text-slate-300">{experience.summary}</p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-200">
-              {experience.highlights.map((highlight) => (
-                <li key={highlight} className="flex items-start gap-2">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-gradient-to-r from-accent-peach to-accent-mint" />
-                  <span>{highlight}</span>
+            <h3 className="font-display text-2xl text-sand-100">{item.title}</h3>
+            <ul className="mt-4 space-y-2 text-sm text-sand-200/80">
+              {item.bullets.map((bullet) => (
+                <li key={bullet} className="flex items-start gap-2">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-copper-400" />
+                  <span>{bullet}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {experience.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-white/15 px-3 py-1 text-xs tracking-wide text-white/80"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </article>
+          </div>
         ))}
       </div>
     </section>
   );
 }
 
-function SkillsAndCerts() {
+function Skills() {
   return (
-    <section className="grid gap-8 lg:grid-cols-2">
-      <div className="rounded-3xl border border-white/10 bg-slate-900/40 p-6 shadow-card sm:p-8">
-        <SectionHeading
-          eyebrow="Strengths"
-          title="Creative toolkit"
-          subtitle="A mix of strategy, craft, and experimentation." />
-        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
-          {resume.skills.map((skill) => (
-            <div
-              key={skill}
-              className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-4 text-sm font-medium text-white"
-            >
-              {skill}
+    <section id="skills" className="space-y-8">
+      <SectionHeading
+        eyebrow="Skills"
+        title="Keyword coverage recruiters scan for"
+        subtitle="Tight set focused on copy, lifecycle, and social systems."
+      />
+      <div className="flex flex-wrap gap-3">
+        {site.skills.map((skill) => (
+          <span
+            key={skill}
+            className="portal-badge text-xs font-semibold uppercase tracking-[0.18em] text-sand-100"
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Certifications() {
+  return (
+    <section id="certifications" className="space-y-8">
+      <SectionHeading
+        eyebrow="Certifications"
+        title="Verified credentials"
+      />
+      <div className="grid gap-6 md:grid-cols-2">
+        {site.certifications.map((cert) => (
+          <div
+            key={`${cert.title}-${cert.issuer}`}
+            className="surface rounded-3xl p-6"
+          >
+            <p className="text-xs uppercase tracking-[0.3em] text-copper-400">
+              {cert.issuer}
+            </p>
+            <h3 className="mt-3 font-display text-2xl text-sand-100">
+              {cert.title}
+            </h3>
+            <p className="mt-2 text-sm text-sand-200/80">Issued {cert.issued}</p>
+            {cert.credentialId ? (
+              <p className="mt-2 text-xs text-sand-200/60">
+                Credential ID: {cert.credentialId}
+              </p>
+            ) : null}
+            {cert.credentialUrl !== undefined ? (
+              <p className="mt-2 text-xs text-sand-200/60">
+                Credential URL: {cert.credentialUrl || "Add credential link"}
+              </p>
+            ) : null}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function CaseStudies() {
+  return (
+    <section id="case-studies" className="space-y-8">
+      <SectionHeading
+        eyebrow="Case Studies"
+        title="Problem -> Action -> Outcome"
+        subtitle="Each case links to a quick detail block with proof placeholders for screenshots."
+      />
+      <div className="grid gap-6 md:grid-cols-2">
+        {site.caseStudies.map((study) => (
+          <CaseStudyCard key={study.slug} study={study} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function CaseStudyDetails() {
+  return (
+    <section className="space-y-6">
+      {site.caseStudies.map((study) => (
+        <details
+          key={study.slug}
+          id={`case-${study.slug}`}
+          className="surface rounded-3xl p-6"
+        >
+          <summary className="cursor-pointer list-none text-sm uppercase tracking-[0.3em] text-copper-400">
+            {study.company} - {study.focus}
+          </summary>
+          <div className="mt-6 space-y-4">
+            <p className="text-sm text-sand-200/70">
+              {study.role} | {study.period}
+            </p>
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-berry-500">
+                Problem
+              </p>
+              <p className="mt-2 text-base text-sand-100">{study.problem}</p>
             </div>
-          ))}
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-berry-500">
+                Actions
+              </p>
+              <ul className="mt-2 space-y-2 text-sm text-sand-200/80">
+                {study.actions.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-copper-400" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-berry-500">
+                Outcome
+              </p>
+              <p className="mt-2 text-base text-sand-100">{study.outcome}</p>
+            </div>
+          </div>
+        </details>
+      ))}
+    </section>
+  );
+}
+
+function ProofGallery() {
+  return (
+    <section id="portfolio" className="space-y-8">
+      <SectionHeading
+        eyebrow="Portfolio Proof"
+        title="Proof available on request"
+        subtitle="Samples can be shared privately depending on brand permissions."
+      />
+      <div className="surface rounded-3xl p-6">
+        <ul className="space-y-3 text-sm text-sand-200/80">
+          <li>Push notification samples (retention + lifecycle).</li>
+          <li>Reel scripts, VO directions, and caption frameworks.</li>
+          <li>SEO blog snippets + product description systems.</li>
+          <li>Social calendar samples and campaign briefs.</li>
+        </ul>
+        <div className="mt-6">
+          <a
+            href={site.contact.mailtoSamples}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-full border border-white/25 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
+          >
+            Request samples
+          </a>
         </div>
       </div>
-      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-accent-peach/10 via-transparent to-accent-mint/10 p-6 shadow-card sm:p-8">
-        <SectionHeading
-          eyebrow="Certifications"
-          title="Always in learning mode"
-        />
-        <ul className="mt-6 space-y-4 text-base text-slate-100">
-          {resume.certifications.map((cert) => (
-            <li key={cert} className="flex items-center gap-3">
-              <span className="h-2 w-2 rounded-full bg-accent-peach" />
-              {cert}
+    </section>
+  );
+}
+
+function About() {
+  return (
+    <section id="about" className="space-y-6">
+      <SectionHeading
+        eyebrow="About"
+        title="Short, skimmable, recruiter-friendly"
+      />
+      <div className="surface rounded-3xl p-6">
+        <ul className="grid gap-3 text-sm text-sand-200/80 md:grid-cols-2">
+          {site.about.map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-jade-400" />
+              <span>{item}</span>
             </li>
           ))}
         </ul>
@@ -175,18 +341,20 @@ function SkillsAndCerts() {
   );
 }
 
-function Education() {
+function Services() {
   return (
-    <section>
-      <SectionHeading eyebrow="Education" title="Fashion-rooted storytelling" />
-      <div className="grid gap-5 md:grid-cols-2">
-        {resume.education.map((edu) => (
-          <div key={edu.school} className="rounded-3xl border border-white/15 p-6">
-            <p className="text-sm uppercase tracking-[0.3em] text-accent-mint">
-              {edu.period}
-            </p>
-            <h3 className="mt-3 font-display text-2xl text-white">{edu.program}</h3>
-            <p className="mt-1 text-slate-300">{edu.school}</p>
+    <section id="services" className="space-y-6">
+      <SectionHeading
+        eyebrow="Services"
+        title="Ways I plug into teams"
+      />
+      <div className="grid gap-4 md:grid-cols-2">
+        {site.services.map((service) => (
+          <div
+            key={service}
+            className="surface rounded-3xl p-5 text-sm text-sand-100"
+          >
+            {service}
           </div>
         ))}
       </div>
@@ -194,27 +362,74 @@ function Education() {
   );
 }
 
-function CTA() {
+function Testimonials() {
   return (
-    <section className="rounded-3xl border border-white/10 bg-gradient-to-r from-accent-peach/20 via-accent-blush/20 to-accent-mint/20 p-10 text-center shadow-card">
-      <p className="text-sm uppercase tracking-[0.3em] text-white/80">Next collaboration</p>
-      <h2 className="mt-4 font-display text-4xl text-white">Ready to give your brand a new voice?</h2>
-      <p className="mx-auto mt-3 max-w-2xl text-base text-white/80">
-        Whether it’s retention copy, high-velocity social calendars, or influencer launch pods, Chanchal can plug in and ship polished content systems.
-      </p>
-      <div className="mt-8 flex flex-wrap justify-center gap-4">
-        <a
-          href="mailto:being.chanchalv@gmail.com"
-          className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100"
-        >
-          Email Chanchal
-        </a>
-        <a
-          href="tel:+919645697062"
-          className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:border-white"
-        >
-          Call / WhatsApp
-        </a>
+    <section id="testimonials" className="space-y-6">
+      <SectionHeading
+        eyebrow="Testimonials"
+        title="Hidden for now"
+        subtitle="Enable SHOW_TESTIMONIALS once references are ready."
+      />
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="space-y-6">
+      <SectionHeading
+        eyebrow="Contact"
+        title="Hire me or book an interview call"
+        subtitle="Email is fastest. LinkedIn is also available."
+      />
+      <div className="surface rounded-3xl p-6">
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="space-y-2 text-sm text-sand-200/80">
+            <p className="text-xs uppercase tracking-[0.3em] text-copper-400">
+              Email
+            </p>
+            <a
+              href={site.contact.mailtoInterview}
+              target="_blank"
+              rel="noreferrer"
+              className="text-lg text-sand-100 hover:text-copper-400"
+            >
+              {site.contact.email}
+            </a>
+          </div>
+          <div className="space-y-2 text-sm text-sand-200/80">
+            <p className="text-xs uppercase tracking-[0.3em] text-copper-400">
+              Location
+            </p>
+            <p className="text-lg text-sand-100">{site.contact.location}</p>
+          </div>
+        </div>
+        <div className="mt-6 flex flex-wrap gap-4">
+          <a
+            href={site.contact.mailtoInterview}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-berry-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:bg-berry-600"
+          >
+            Hire me
+          </a>
+          <a
+            href={site.contact.mailtoInterview}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
+          >
+            Book a call
+          </a>
+          <a
+            href={site.contact.linkedinUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-jade-400"
+          >
+            LinkedIn
+          </a>
+        </div>
       </div>
     </section>
   );

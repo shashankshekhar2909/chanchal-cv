@@ -10,21 +10,32 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#111827",
-          light: "#1f2937",
+          900: "#0b0c10",
+          800: "#111418",
+          700: "#1a1f24",
         },
-        accent: {
-          peach: "#f97316",
-          blush: "#f43f5e",
-          mint: "#34d399",
+        sand: {
+          100: "#f7f5f2",
+          200: "#e9e4dd",
+        },
+        copper: {
+          400: "#d6a65a",
+          500: "#c78c3b",
+        },
+        berry: {
+          500: "#d4514a",
+          600: "#b6403a",
+        },
+        jade: {
+          400: "#67b69a",
         },
       },
       fontFamily: {
-        display: ["'Space Grotesk'", "system-ui", "sans-serif"],
-        body: ["'Inter'", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "serif"],
+        body: ["var(--font-body)", "sans-serif"],
       },
       boxShadow: {
-        card: "0 25px 50px -12px rgba(15, 23, 42, 0.35)",
+        card: "0 24px 60px -20px rgba(10, 12, 16, 0.45)",
       },
     },
   },
