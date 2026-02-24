@@ -7,6 +7,10 @@
   background-color: #0b0c10;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -17,6 +21,7 @@ body {
   background:
     radial-gradient(circle at 15% 10%, rgba(199, 140, 59, 0.12), transparent 55%),
     radial-gradient(circle at 70% 20%, rgba(103, 182, 154, 0.1), transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(212, 81, 74, 0.08), transparent 60%),
     #0b0c10;
   min-height: 100vh;
   overflow-x: hidden;
@@ -24,6 +29,27 @@ body {
 
 section {
   scroll-margin-top: 120px;
+}
+
+.portal-shell {
+  position: relative;
+}
+
+.portal-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.surface {
+  background: rgba(17, 20, 24, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px -20px rgba(10, 12, 16, 0.45);
 }
 
 .gradient-divider {

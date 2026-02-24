@@ -3,11 +3,11 @@ export const site = {
   location: "Bengaluru, India",
   role: "Copywriter | Social Media & Content Strategist",
   hero: {
-    headline: "Growth-focused Content Strategist | Performance + Retention + Social",
+    headline: "Growth-Focused Content & Lifecycle Strategist",
+    subheading:
+      "Retention Messaging • Social Content Systems • High-Volume Content Ops",
     valueProp:
-      "I build conversion-first messaging systems across lifecycle, social, and influencer channels. Expect measurable lifts, clean execution, and content teams that ship faster.",
-    subline:
-      "Specialized in retention copy, high-volume content ops, and social storytelling for D2C, fintech, and fashion brands.",
+      "I build conversion-first messaging systems across lifecycle and social channels. Expect measurable lifts and fast, clean execution.",
     metricChips: [
       "Push CTR: 0.7% -> 2-3%",
       "90+ posts/month (GIVA)",
@@ -15,7 +15,7 @@ export const site = {
       "D2C + Fintech + Fashion",
     ],
     ctas: {
-      email: "mailto:being.chanchalv@gmail.com",
+      email: "mailto:being.chanchalv@gmail.com?subject=Interview%20%E2%80%93%20Content%20%26%20Social%20Role&body=Hi%20Chanchal%2C%0AI'm%20reaching%20out%20about%20a%20Content%2FSocial%20role%20at%20%5BCompany%5D.%0AWe%E2%80%99d%20love%20to%20discuss%20your%20experience%20with%20lifecycle%20messaging%20and%20social%20systems.%0A%E2%80%94%20%5BName%5D",
       caseStudies: "#case-studies",
       resume: "/resume.pdf",
     },
@@ -62,6 +62,49 @@ export const site = {
       ],
     },
   ],
+  skills: [
+    "Copywriting",
+    "Content Strategy",
+    "Lifecycle Messaging",
+    "Social Media Strategy",
+    "Influencer Marketing",
+    "SEO Copywriting",
+    "Storytelling",
+    "Creative Strategy",
+    "Content Ops",
+    "Analytics-informed iteration",
+  ],
+  certifications: [
+    {
+      title: "Attract and Engage Customers with Digital Marketing",
+      issuer: "Google",
+      issued: "Feb 2026",
+      credentialId: "F2HXQQTCFCWW",
+      credentialUrl: "",
+    },
+    {
+      title: "Foundations of Digital Marketing and E-commerce",
+      issuer: "Google",
+      issued: "Aug 2025",
+      credentialId: "4SFK1EJESGSF",
+      credentialUrl: "",
+    },
+    {
+      title: "Marketing and Advertising",
+      issuer: "MyCaptain",
+      issued: "Oct 2020",
+    },
+    {
+      title: "Blogging and Content Writing",
+      issuer: "MyCaptain",
+      issued: "Jun 2019",
+    },
+    {
+      title: "Creative Writing",
+      issuer: "MyCaptain",
+      issued: "Jul 2019",
+    },
+  ],
   caseStudies: [
     {
       slug: "snapmint-retention",
@@ -71,13 +114,14 @@ export const site = {
       focus: "Retention Messaging + A/B Testing",
       problem:
         "Lifecycle copy needed to lift engagement without increasing send volume.",
-      whatIDid: [
-        "Led push, WhatsApp, and SMS messaging for engagement + retention.",
-        "Designed A/B tests for hooks, timing, and tone across cohorts.",
-        "Aligned social messaging on IG + LinkedIn with lifecycle themes.",
+      actions: [
+        "Built a hook library aligned to user intent and lifecycle stage.",
+        "Ran A/B tests across timing, tone, and urgency cues.",
+        "Segmented messaging by cohort and product category.",
+        "Created reusable templates + documentation for rapid iteration.",
+        "Closed the loop with a weekly performance review cadence.",
       ],
       outcome: "Push CTR improved from 0.7% to 2-3% through iterative testing.",
-      proof: "Proof placeholder: add screenshots (push variations, CTR snapshots).",
     },
     {
       slug: "giva-content-ops",
@@ -87,13 +131,13 @@ export const site = {
       focus: "High-volume Content Ops + Campaign Planning",
       problem:
         "Needed a scalable social content engine to support weekly product drops.",
-      whatIDid: [
-        "Managed IG content calendar with 90+ posts/month.",
-        "Planned campaigns and wrote scripts for video, audio, and social.",
-        "Produced Shopify product descriptions for weekly launches.",
+      actions: [
+        "Built a content calendar system to ship 90+ posts/month.",
+        "Led campaign planning with clear pillars and weekly themes.",
+        "Wrote scripts, storyboards, and audio cues for creators.",
+        "Delivered Shopify launch copy for weekly drops.",
       ],
       outcome: "Sustained high-volume publishing with consistent brand voice.",
-      proof: "Proof placeholder: add screenshots (calendar, campaign posts, scripts).",
     },
     {
       slug: "reshamandi-seo",
@@ -103,13 +147,13 @@ export const site = {
       focus: "SEO + Catalog Copy Optimization",
       problem:
         "Needed better discoverability and conversion for catalog and blog content.",
-      whatIDid: [
-        "Wrote product descriptions and SEO blog content.",
+      actions: [
+        "Produced SEO blogs and product descriptions for key categories.",
         "Optimized catalog copy for clarity and search intent.",
-        "Aligned copy structure for faster browsing and decision-making.",
+        "Aligned keyword usage with conversion-focused copy structure.",
+        "Refined category messaging for easier discovery paths.",
       ],
-      outcome: "Improved discoverability (add metric when available).",
-      proof: "Proof placeholder: add screenshots (SEO snippets, catalog samples).",
+      outcome: "Engagement improved (metric available on request).",
     },
     {
       slug: "nekbyjar-reels",
@@ -119,35 +163,14 @@ export const site = {
       focus: "Reels + Social Storytelling",
       problem:
         "Needed cohesive storytelling across reels, captions, and WhatsApp content.",
-      whatIDid: [
-        "Crafted captions, reel voiceovers, story content, and grid text.",
-        "Developed reel concepts and launch narratives.",
-        "Built WhatsApp communications, push notifications, and articles.",
+      actions: [
+        "Ideated reels with hook-first structures and creative arcs.",
+        "Wrote voiceovers, scripts, and caption frameworks.",
+        "Delivered story + grid content aligned to launches.",
+        "Built WhatsApp and push flows for post-launch momentum.",
+        "Maintained consistent storytelling across channels.",
       ],
-      outcome: "Improved engagement (add metric when available).",
-      proof: "Proof placeholder: add screenshots (reels, captions, WhatsApp flows).",
-    },
-  ],
-  gallery: [
-    {
-      title: "Push Notification Samples",
-      description: "Lifecycle hooks + copy variants (proof available on request).",
-      image: "/portfolio/placeholders/push.svg",
-    },
-    {
-      title: "Reel Script Concepts",
-      description: "High-retention hooks + VO cues (proof available on request).",
-      image: "/portfolio/placeholders/reels.svg",
-    },
-    {
-      title: "Caption & Grid Copy",
-      description: "Brand voice samples (proof available on request).",
-      image: "/portfolio/placeholders/captions.svg",
-    },
-    {
-      title: "SEO Blog + Catalog",
-      description: "SEO snippets and product descriptions (proof available on request).",
-      image: "/portfolio/placeholders/seo.svg",
+      outcome: "Engagement improved (metric available on request).",
     },
   ],
   about: [
@@ -169,10 +192,13 @@ export const site = {
     location: "Bengaluru, India",
     linkedinLabel: "LinkedIn",
     linkedinUrl: "https://www.linkedin.com/in/chanchal-verma/",
+    mailtoInterview:
+      "mailto:being.chanchalv@gmail.com?subject=Interview%20%E2%80%93%20Content%20%26%20Social%20Role&body=Hi%20Chanchal%2C%0AI'm%20reaching%20out%20about%20a%20Content%2FSocial%20role%20at%20%5BCompany%5D.%0AWe%E2%80%99d%20love%20to%20discuss%20your%20experience%20with%20lifecycle%20messaging%20and%20social%20systems.%0A%E2%80%94%20%5BName%5D",
+    mailtoSamples:
+      "mailto:being.chanchalv@gmail.com?subject=Requesting%20portfolio%20samples%20%E2%80%93%20%5BRole%5D%20at%20%5BCompany%5D&body=Hi%20Chanchal%2C%0AI'm%20requesting%20portfolio%20samples%20for%3A%0A%5B%20%5D%20Lifecycle%0A%5B%20%5D%20Social%2FReels%0A%5B%20%5D%20SEO%2FCatalog%0A%5B%20%5D%20Influencer%0A%0A%E2%80%94%20%5BName%5D",
   },
   seo: {
-    title:
-      "Chanchal Verma | Copywriter & Social Media Strategist - Retention + Social",
+    title: "Chanchal Verma · Portfolio",
     description:
       "Metrics-first portfolio for Chanchal Verma, a copywriter and social media strategist specializing in lifecycle messaging, retention, and social content systems.",
     ogImage: "/og-image.svg",

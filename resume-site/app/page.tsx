@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import MetricChip from "@/components/MetricChip";
 import CaseStudyCard from "@/components/CaseStudyCard";
@@ -8,9 +7,12 @@ const SHOW_TESTIMONIALS = false;
 
 export default function HomePage() {
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-16 px-4 py-12 sm:gap-20 sm:px-6 md:px-10 lg:px-0">
+    <main className="portal-shell mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-16 px-4 py-12 sm:gap-20 sm:px-6 md:px-10 lg:px-0">
+      <PortalHeader />
       <Hero />
       <ResultsSnapshot />
+      <Skills />
+      <Certifications />
       <div className="gradient-divider" />
       <CaseStudies />
       <CaseStudyDetails />
@@ -23,25 +25,67 @@ export default function HomePage() {
   );
 }
 
+function PortalHeader() {
+  return (
+    <header className="surface flex flex-col gap-4 rounded-3xl p-5 sm:flex-row sm:items-center sm:justify-between">
+      <div className="space-y-2">
+        <p className="text-xs uppercase tracking-[0.35em] text-copper-400">
+          {site.name}
+        </p>
+        <p className="text-sm text-sand-200/80">{site.role}</p>
+      </div>
+      <nav className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.3em] text-sand-100/80">
+        <a href="#results" className="hover:text-copper-400">
+          Results
+        </a>
+        <a href="#case-studies" className="hover:text-copper-400">
+          Case Studies
+        </a>
+        <a href="#services" className="hover:text-copper-400">
+          Services
+        </a>
+        <a href="#contact" className="hover:text-copper-400">
+          Contact
+        </a>
+      </nav>
+      <div className="flex flex-wrap gap-3">
+        <a
+          href={site.contact.mailtoInterview}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center rounded-full border border-white/25 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
+        >
+          Email
+        </a>
+        <a
+          href={site.hero.ctas.resume}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center rounded-full bg-copper-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-ink-900 hover:bg-copper-400"
+        >
+          Resume
+        </a>
+      </div>
+    </header>
+  );
+}
+
 function Hero() {
   return (
-    <section className="decor-wrapper rounded-3xl border border-white/10 bg-white/5 p-6 shadow-card sm:p-10">
+    <section className="decor-wrapper section-panel rounded-3xl border border-white/10 bg-white/5 p-6 shadow-card sm:p-10">
       <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
         <div className="space-y-6">
           <p className="text-xs uppercase tracking-[0.35em] text-copper-400">
             {site.name} · Portfolio
           </p>
-          <p className="font-display text-3xl text-sand-100 sm:text-4xl">
-            {site.name}
-          </p>
           <h1 className="font-display text-4xl text-sand-100 sm:text-5xl lg:text-6xl">
             {site.hero.headline}
           </h1>
+          <p className="text-sm uppercase tracking-[0.25em] text-sand-200/80">
+            {site.hero.subheading}
+          </p>
           <p className="max-w-2xl text-lg text-sand-200/90">
             {site.hero.valueProp}
-          </p>
-          <p className="max-w-2xl text-base text-sand-200/70">
-            {site.hero.subline}
           </p>
           <div className="flex flex-wrap gap-3">
             {site.hero.metricChips.map((chip) => (
@@ -59,8 +103,6 @@ function Hero() {
             </a>
             <a
               href={site.hero.ctas.caseStudies}
-              target="_blank"
-              rel="noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
             >
               View case studies
@@ -75,7 +117,7 @@ function Hero() {
             </a>
           </div>
         </div>
-        <div className="rounded-3xl border border-white/10 bg-ink-800/60 p-6">
+        <div className="surface rounded-3xl p-6">
           <p className="text-xs uppercase tracking-[0.35em] text-berry-500">
             Quick context
           </p>
@@ -106,7 +148,7 @@ function ResultsSnapshot() {
         {site.resultsSnapshot.map((item) => (
           <div
             key={item.title}
-            className="rounded-3xl border border-white/10 bg-ink-800/70 p-6 shadow-card"
+            className="surface rounded-3xl p-6"
           >
             <h3 className="font-display text-2xl text-sand-100">{item.title}</h3>
             <ul className="mt-4 space-y-2 text-sm text-sand-200/80">
@@ -117,6 +159,65 @@ function ResultsSnapshot() {
                 </li>
               ))}
             </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Skills() {
+  return (
+    <section id="skills" className="space-y-8">
+      <SectionHeading
+        eyebrow="Skills"
+        title="Keyword coverage recruiters scan for"
+        subtitle="Tight set focused on copy, lifecycle, and social systems."
+      />
+      <div className="flex flex-wrap gap-3">
+        {site.skills.map((skill) => (
+          <span
+            key={skill}
+            className="portal-badge text-xs font-semibold uppercase tracking-[0.18em] text-sand-100"
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Certifications() {
+  return (
+    <section id="certifications" className="space-y-8">
+      <SectionHeading
+        eyebrow="Certifications"
+        title="Verified credentials"
+      />
+      <div className="grid gap-6 md:grid-cols-2">
+        {site.certifications.map((cert) => (
+          <div
+            key={`${cert.title}-${cert.issuer}`}
+            className="surface rounded-3xl p-6"
+          >
+            <p className="text-xs uppercase tracking-[0.3em] text-copper-400">
+              {cert.issuer}
+            </p>
+            <h3 className="mt-3 font-display text-2xl text-sand-100">
+              {cert.title}
+            </h3>
+            <p className="mt-2 text-sm text-sand-200/80">Issued {cert.issued}</p>
+            {cert.credentialId ? (
+              <p className="mt-2 text-xs text-sand-200/60">
+                Credential ID: {cert.credentialId}
+              </p>
+            ) : null}
+            {cert.credentialUrl !== undefined ? (
+              <p className="mt-2 text-xs text-sand-200/60">
+                Credential URL: {cert.credentialUrl || "Add credential link"}
+              </p>
+            ) : null}
           </div>
         ))}
       </div>
@@ -148,44 +249,39 @@ function CaseStudyDetails() {
         <details
           key={study.slug}
           id={`case-${study.slug}`}
-          className="rounded-3xl border border-white/10 bg-white/5 p-6"
+          className="surface rounded-3xl p-6"
         >
           <summary className="cursor-pointer list-none text-sm uppercase tracking-[0.3em] text-copper-400">
             {study.company} - {study.focus}
           </summary>
-          <div className="mt-6 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="space-y-4">
-              <p className="text-sm text-sand-200/70">
-                {study.role} | {study.period}
+          <div className="mt-6 space-y-4">
+            <p className="text-sm text-sand-200/70">
+              {study.role} | {study.period}
+            </p>
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-berry-500">
+                Problem
               </p>
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-berry-500">
-                  Problem
-                </p>
-                <p className="mt-2 text-base text-sand-100">{study.problem}</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-berry-500">
-                  What I did
-                </p>
-                <ul className="mt-2 space-y-2 text-sm text-sand-200/80">
-                  {study.whatIDid.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="mt-1 h-2 w-2 rounded-full bg-copper-400" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-berry-500">
-                  Outcome
-                </p>
-                <p className="mt-2 text-base text-sand-100">{study.outcome}</p>
-              </div>
+              <p className="mt-2 text-base text-sand-100">{study.problem}</p>
             </div>
-            <div className="rounded-2xl border border-dashed border-white/25 bg-ink-800/60 p-6 text-sm text-sand-200/70">
-              {study.proof}
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-berry-500">
+                Actions
+              </p>
+              <ul className="mt-2 space-y-2 text-sm text-sand-200/80">
+                {study.actions.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-copper-400" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-berry-500">
+                Outcome
+              </p>
+              <p className="mt-2 text-base text-sand-100">{study.outcome}</p>
             </div>
           </div>
         </details>
@@ -199,30 +295,26 @@ function ProofGallery() {
     <section id="portfolio" className="space-y-8">
       <SectionHeading
         eyebrow="Portfolio Proof"
-        title="Sample formats (proof available on request)"
-        subtitle="Current blocks are labeled placeholders until real samples are added."
+        title="Proof available on request"
+        subtitle="Samples can be shared privately depending on brand permissions."
       />
-      <div className="grid gap-6 md:grid-cols-2">
-        {site.gallery.map((item) => (
-          <div
-            key={item.title}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6"
+      <div className="surface rounded-3xl p-6">
+        <ul className="space-y-3 text-sm text-sand-200/80">
+          <li>Push notification samples (retention + lifecycle).</li>
+          <li>Reel scripts, VO directions, and caption frameworks.</li>
+          <li>SEO blog snippets + product description systems.</li>
+          <li>Social calendar samples and campaign briefs.</li>
+        </ul>
+        <div className="mt-6">
+          <a
+            href={site.contact.mailtoSamples}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-full border border-white/25 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
           >
-            <div className="overflow-hidden rounded-2xl border border-white/10">
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={640}
-                height={400}
-                className="h-48 w-full object-cover"
-              />
-            </div>
-            <h3 className="mt-4 font-display text-2xl text-sand-100">
-              {item.title}
-            </h3>
-            <p className="mt-2 text-sm text-sand-200/80">{item.description}</p>
-          </div>
-        ))}
+            Request samples
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -235,7 +327,7 @@ function About() {
         eyebrow="About"
         title="Short, skimmable, recruiter-friendly"
       />
-      <div className="rounded-3xl border border-white/10 bg-ink-800/70 p-6 shadow-card">
+      <div className="surface rounded-3xl p-6">
         <ul className="grid gap-3 text-sm text-sand-200/80 md:grid-cols-2">
           {site.about.map((item) => (
             <li key={item} className="flex items-start gap-2">
@@ -260,7 +352,7 @@ function Services() {
         {site.services.map((service) => (
           <div
             key={service}
-            className="rounded-3xl border border-white/10 bg-white/5 p-5 text-sm text-sand-100"
+            className="surface rounded-3xl p-5 text-sm text-sand-100"
           >
             {service}
           </div>
@@ -288,16 +380,16 @@ function Contact() {
       <SectionHeading
         eyebrow="Contact"
         title="Hire me or book an interview call"
-        subtitle="Email is fastest. LinkedIn button is ready once you add the URL."
+        subtitle="Email is fastest. LinkedIn is also available."
       />
-      <div className="rounded-3xl border border-white/10 bg-ink-800/70 p-6 shadow-card">
+      <div className="surface rounded-3xl p-6">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="space-y-2 text-sm text-sand-200/80">
             <p className="text-xs uppercase tracking-[0.3em] text-copper-400">
               Email
             </p>
             <a
-              href={`mailto:${site.contact.email}?subject=Interview%20Call`}
+              href={site.contact.mailtoInterview}
               target="_blank"
               rel="noreferrer"
               className="text-lg text-sand-100 hover:text-copper-400"
@@ -314,7 +406,7 @@ function Contact() {
         </div>
         <div className="mt-6 flex flex-wrap gap-4">
           <a
-            href={`mailto:${site.contact.email}?subject=Hiring%20Inquiry`}
+            href={site.contact.mailtoInterview}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-berry-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:bg-berry-600"
@@ -322,27 +414,21 @@ function Contact() {
             Hire me
           </a>
           <a
-            href={`mailto:${site.contact.email}?subject=Interview%20Call`}
+            href={site.contact.mailtoInterview}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-copper-400"
           >
             Book a call
           </a>
-          {site.contact.linkedinUrl ? (
-            <a
-              href={site.contact.linkedinUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-jade-400"
-            >
-              LinkedIn
-            </a>
-          ) : (
-            <span className="inline-flex items-center justify-center rounded-full border border-dashed border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100/60">
-              {site.contact.linkedinLabel}
-            </span>
-          )}
+          <a
+            href={site.contact.linkedinUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-sand-100 hover:border-jade-400"
+          >
+            LinkedIn
+          </a>
         </div>
       </div>
     </section>
