@@ -1,0 +1,6 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" rx="32" fill="#111827"/>
+  <rect x="80" y="80" width="260" height="340" rx="24" fill="#1F2937"/>
+  <rect x="380" y="80" width="260" height="340" rx="24" fill="#1F2937"/>
+  <text x="60" y="40" font-family="Arial, sans-serif" font-size="20" fill="#F8F5F2" opacity="0.8">Add Reel Script Screenshots</text>
+</svg>

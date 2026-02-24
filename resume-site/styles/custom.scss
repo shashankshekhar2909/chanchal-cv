@@ -1,0 +1,33 @@
+@mixin blob($size, $color, $blur: 120px) {
+  width: $size;
+  height: $size;
+  background: $color;
+  filter: blur($blur);
+  border-radius: 45% 55% 60% 40% / 45% 55% 45% 55%;
+  opacity: 0.65;
+}
+
+.decor-wrapper {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.decor-wrapper::before,
+.decor-wrapper::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+
+.decor-wrapper::before {
+  @include blob(320px, rgba(245, 158, 11, 0.35));
+  top: -60px;
+  right: -90px;
+}
+
+.decor-wrapper::after {
+  @include blob(280px, rgba(239, 68, 68, 0.35));
+  bottom: -80px;
+  left: -120px;
+}
