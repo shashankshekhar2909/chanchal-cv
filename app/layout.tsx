@@ -18,12 +18,12 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://beingchanchal.com"),
+  metadataBase: new URL("https://www.beingchanchal.com"),
   title: site.seo.title,
   description: site.seo.description,
   applicationName: site.name,
   alternates: {
-    canonical: "https://beingchanchal.com",
+    canonical: "https://www.beingchanchal.com",
   },
   authors: [{ name: site.name }],
   creator: site.name,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: site.seo.title,
     description: site.seo.description,
-    url: "https://beingchanchal.com",
+    url: "https://www.beingchanchal.com",
     siteName: site.name,
     locale: "en_US",
     images: [site.seo.ogImage],
@@ -102,7 +102,7 @@ export default function RootLayout({
             "@type": "Person",
             name: site.name,
             alternateName: ["Chanchal", "Chanchal V"],
-            url: "https://beingchanchal.com",
+            url: "https://www.beingchanchal.com",
             email: site.contact.email,
             homeLocation: {
               "@type": "Place",
@@ -119,7 +119,7 @@ export default function RootLayout({
               "SEO Copywriting",
               "Catalog Copy Optimization",
             ],
-            sameAs: ["https://beingchanchal.com"],
+            sameAs: ["https://www.beingchanchal.com"],
             jobTitle: [
               "Content Strategist",
               "Lifecycle Content Specialist",
@@ -132,7 +132,7 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: site.name,
-            url: "https://beingchanchal.com",
+            url: "https://www.beingchanchal.com",
             description: site.seo.description,
           })}
         </Script>
