@@ -9,6 +9,9 @@ export default function HeroCanvas() {
   useEffect(() => {
     const el = mountRef.current;
     if (!el) return;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+    if (prefersReducedMotion || isMobile) return;
 
     /* ── Scene ──────────────────────────────────── */
     const scene = new THREE.Scene();
@@ -22,7 +25,7 @@ export default function HeroCanvas() {
     el.appendChild(renderer.domElement);
 
     /* ── Particle geometry ──────────────────────── */
-    const count = 120;
+    const count = 44;
     const positions = new Float32Array(count * 3);
     const velocities: { x: number; y: number; z: number }[] = [];
 
@@ -51,39 +54,6 @@ export default function HeroCanvas() {
     const particles = new THREE.Points(geo, mat);
     scene.add(particles);
 
-    /* ── Connection lines ───────────────────────── */
-    const lineMat = new THREE.LineBasicMaterial({
-      color: 0x7c3aed,
-      transparent: true,
-      opacity: 0.08,
-    });
-
-    let lineGroup = new THREE.Group();
-    scene.add(lineGroup);
-
-    function rebuildLines() {
-      scene.remove(lineGroup);
-      lineGroup = new THREE.Group();
-      const pos = geo.attributes.position.array as Float32Array;
-      const threshold = 10;
-
-      for (let i = 0; i < count; i++) {
-        for (let j = i + 1; j < count; j++) {
-          const dx = pos[i * 3] - pos[j * 3];
-          const dy = pos[i * 3 + 1] - pos[j * 3 + 1];
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < threshold) {
-            const lineGeo = new THREE.BufferGeometry().setFromPoints([
-              new THREE.Vector3(pos[i * 3], pos[i * 3 + 1], pos[i * 3 + 2]),
-              new THREE.Vector3(pos[j * 3], pos[j * 3 + 1], pos[j * 3 + 2]),
-            ]);
-            lineGroup.add(new THREE.Line(lineGeo, lineMat));
-          }
-        }
-      }
-      scene.add(lineGroup);
-    }
-
     /* ── Mouse parallax ─────────────────────────── */
     let mouseX = 0;
     let mouseY = 0;
@@ -103,12 +73,17 @@ export default function HeroCanvas() {
     window.addEventListener("resize", onResize);
 
     /* ── Animation loop ─────────────────────────── */
-    let frame = 0;
     let animId: number;
+    let isPaused = false;
+
+    const onVisibilityChange = () => {
+      isPaused = document.hidden;
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
-      frame++;
+      if (isPaused) return;
 
       const pos = geo.attributes.position.array as Float32Array;
       for (let i = 0; i < count; i++) {
@@ -123,9 +98,6 @@ export default function HeroCanvas() {
       }
       geo.attributes.position.needsUpdate = true;
 
-      // Rebuild lines every 4 frames (performance)
-      if (frame % 4 === 0) rebuildLines();
-
       // Camera drift toward mouse
       camera.position.x += (mouseX * 1.5 - camera.position.x) * 0.03;
       camera.position.y += (mouseY * 1.0 - camera.position.y) * 0.03;
@@ -137,6 +109,7 @@ export default function HeroCanvas() {
 
     return () => {
       cancelAnimationFrame(animId);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
       window.removeEventListener("mousemove", onMouse);
       window.removeEventListener("resize", onResize);
       renderer.dispose();

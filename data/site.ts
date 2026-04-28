@@ -185,9 +185,10 @@ export const site = {
       "mailto:being.chanchalv@gmail.com?subject=Requesting%20portfolio%20samples%20%E2%80%93%20%5BRole%5D&body=Hi%20Chanchal%2C%0AI'm%20requesting%20portfolio%20samples%20for%3A%0A%5B%20%5D%20Lifecycle%0A%5B%20%5D%20Social%2FReels%0A%5B%20%5D%20SEO%2FCatalog%0A%5B%20%5D%20Influencer%0A%0A%E2%80%94%20%5BName%5D",
   },
   seo: {
-    title: "Chanchal Verma — Content & Lifecycle Strategist | Push, Social, SEO",
+    title:
+      "Chanchal Verma | Content Strategist Portfolio | Lifecycle, Social, SEO Copywriting",
     description:
-      "Portfolio of Chanchal Verma — Content strategist specializing in lifecycle content, retention messaging, push notification copy, social strategy, and SEO content.",
+      "Chanchal Verma is a Content Strategist and Copywriter in Bengaluru, India specializing in lifecycle messaging, push notification copy, WhatsApp and SMS campaigns, social media strategy, reels scripting, SEO content, and catalog copywriting.",
     ogImage: "/og-image.svg",
   },
 };

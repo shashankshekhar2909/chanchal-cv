@@ -6,6 +6,19 @@ const stagger = utils.stagger;
 
 export default function AnimationProvider() {
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+    const lowPowerMode = prefersReducedMotion || isMobile;
+
+    if (lowPowerMode) {
+      document.querySelectorAll<HTMLElement>(".hero-animate-1, .hero-animate-2, .hero-animate-cta, .hero-bento .bento-card, .reveal")
+        .forEach((el) => {
+          el.style.opacity = "1";
+          el.style.transform = "none";
+        });
+      return;
+    }
+
     /* ── Hero entrance (anime.js v4 timeline) ───── */
     const tl = createTimeline({ defaults: { ease: "outExpo" } });
 
@@ -74,77 +87,8 @@ export default function AnimationProvider() {
       observer.observe(el);
     });
 
-    /* ── 3-D card tilt ──────────────────────────── */
-    function onMove(this: HTMLElement, e: MouseEvent) {
-      const r = this.getBoundingClientRect();
-      const rx = ((e.clientY - r.top  - r.height / 2) / (r.height / 2)) * -8;
-      const ry = ((e.clientX - r.left - r.width  / 2) / (r.width  / 2)) *  8;
-      animate(this, { rotateX: rx, rotateY: ry, duration: 120, ease: "linear" });
-      this.style.boxShadow = `${-ry * 1.6}px ${rx * 1.6}px 32px rgba(124,58,237,0.14)`;
-    }
-    function onLeave(this: HTMLElement) {
-      animate(this, { rotateX: 0, rotateY: 0, duration: 500, ease: "outElastic(1,.6)" });
-      this.style.boxShadow = "";
-    }
-
-    const tiltEls = document.querySelectorAll<HTMLElement>(".card-3d");
-    tiltEls.forEach((el) => {
-      el.style.transformStyle = "preserve-3d";
-      el.addEventListener("mousemove", onMove as EventListener);
-      el.addEventListener("mouseleave", onLeave as EventListener);
-    });
-
-    /* ── Magnetic buttons ───────────────────────── */
-    function onMagMove(this: HTMLElement, e: MouseEvent) {
-      const r  = this.getBoundingClientRect();
-      const dx = (e.clientX - (r.left + r.width  / 2)) * 0.3;
-      const dy = (e.clientY - (r.top  + r.height / 2)) * 0.3;
-      animate(this, { translateX: dx, translateY: dy, duration: 200, ease: "outQuad" });
-    }
-    function onMagLeave(this: HTMLElement) {
-      animate(this, { translateX: 0, translateY: 0, duration: 600, ease: "outElastic(1,.5)" });
-    }
-
-    const magEls = document.querySelectorAll<HTMLElement>(".btn-magnet");
-    magEls.forEach((el) => {
-      el.addEventListener("mousemove", onMagMove as EventListener);
-      el.addEventListener("mouseleave", onMagLeave as EventListener);
-    });
-
-    /* ── Parallax blobs ─────────────────────────── */
-    function onHeroMouse(e: MouseEvent) {
-      const dx = (e.clientX / window.innerWidth  - 0.5) * 24;
-      const dy = (e.clientY / window.innerHeight - 0.5) * 16;
-      document.querySelectorAll<HTMLElement>(".parallax-blob").forEach((b, i) => {
-        const f = i % 2 === 0 ? 1 : -0.6;
-        animate(b, { translateX: dx * f, translateY: dy * f, duration: 900, ease: "outQuad" });
-      });
-    }
-    window.addEventListener("mousemove", onHeroMouse);
-
-    /* ── Marquee (skills ticker) ────────────────── */
-    const marquee = document.querySelector<HTMLElement>(".marquee-track");
-    if (marquee) {
-      const totalW = marquee.scrollWidth / 2;
-      animate(marquee, {
-        translateX: [0, -totalW],
-        duration:   18000,
-        loop:       true,
-        ease:       "linear",
-      });
-    }
-
     return () => {
       observer.disconnect();
-      tiltEls.forEach((el) => {
-        el.removeEventListener("mousemove", onMove as EventListener);
-        el.removeEventListener("mouseleave", onLeave as EventListener);
-      });
-      magEls.forEach((el) => {
-        el.removeEventListener("mousemove", onMagMove as EventListener);
-        el.removeEventListener("mouseleave", onMagLeave as EventListener);
-      });
-      window.removeEventListener("mousemove", onHeroMouse);
     };
   }, []);
 
