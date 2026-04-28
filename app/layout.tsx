@@ -162,6 +162,67 @@ export default function RootLayout({
             description: site.seo.description,
           })}
         </Script>
+        <Script id="schema-professional-service" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            name: site.name,
+            url: "https://www.beingchanchal.com",
+            description: site.seo.description,
+            areaServed: "India",
+            serviceType: [
+              "Content Strategy",
+              "Lifecycle Messaging",
+              "Push Notification Copywriting",
+              "WhatsApp Campaign Content",
+              "SMS Campaign Messaging",
+              "Social Media Content Strategy",
+              "Reels Scripting",
+              "SEO Copywriting",
+              "Catalog Copy Optimization",
+            ],
+          })}
+        </Script>
+        <Script id="schema-faq" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Who is Chanchal Verma?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Chanchal Verma is a content strategist and copywriter based in Bengaluru, focused on lifecycle messaging, social strategy, SEO content, and conversion-focused copy systems.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What services does Chanchal Verma offer?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Services include push notification copy, WhatsApp and SMS campaign messaging, social media content strategy, reels scripting, SEO content writing, and catalog copy optimization.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Does Chanchal Verma work on retention and lifecycle campaigns?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. Chanchal builds lifecycle content systems across push, WhatsApp, and SMS, and improves engagement with testing across hooks, timing, and message structure.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How can I hire Chanchal Verma for content strategy work?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Use the contact section on the website to send an email for full-time, freelance, or consulting opportunities.",
+                },
+              },
+            ],
+          })}
+        </Script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-EK12YHP9B0"
           strategy="afterInteractive"

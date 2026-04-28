@@ -2,6 +2,7 @@ import SectionHeading from "@/components/SectionHeading";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import TrackLink from "@/components/TrackLink";
 import HeroCanvas from "@/components/HeroCanvas";
+import Link from "next/link";
 import { site } from "@/data/site";
 
 const SHOW_TESTIMONIALS = false;
@@ -27,6 +28,7 @@ export default function HomePage() {
           <ProofGallery />
           <About />
           <Services />
+          <Faq />
           {SHOW_TESTIMONIALS ? <Testimonials /> : null}
         </div>
         <Contact />
@@ -666,6 +668,25 @@ function About() {
 /* ── Services ─────────────────────────────────────────────── */
 function Services() {
   const icons = ["✦", "◈", "▲", "◉"];
+  const serviceLinks = [
+    {
+      href: "/content-strategist-bengaluru",
+      label: "View content strategy service page",
+    },
+    {
+      href: "/lifecycle-messaging-specialist",
+      label: "View lifecycle messaging service page",
+    },
+    {
+      href: "/content-strategist-bengaluru#social-media-content-strategy",
+      label: "View social media strategy section",
+    },
+    {
+      href: "/seo-copywriter-india",
+      label: "View SEO copywriting service page",
+    },
+  ];
+
   return (
     <section
       id="services"
@@ -682,7 +703,67 @@ function Services() {
             <p style={{ fontSize: "0.9rem", fontWeight: 500, lineHeight: 1.4, color: "var(--night)" }}>
               {service}
             </p>
+            <Link
+              href={serviceLinks[i]?.href ?? "#contact"}
+              style={{
+                display: "inline-block",
+                marginTop: "0.85rem",
+                fontSize: "0.72rem",
+                color: "var(--violet)",
+                textDecoration: "underline",
+                textUnderlineOffset: "2px",
+              }}
+            >
+              {serviceLinks[i]?.label ?? "Contact for details"}
+            </Link>
           </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Faq() {
+  const faqs = [
+    {
+      q: "Who is Chanchal Verma?",
+      a: "Chanchal Verma is a content strategist and copywriter based in Bengaluru, focused on lifecycle messaging, social strategy, SEO content, and conversion-focused copy systems.",
+    },
+    {
+      q: "What services does Chanchal Verma offer?",
+      a: "Services include push notification copy, WhatsApp and SMS campaign messaging, social media content strategy, reels scripting, SEO content writing, and catalog copy optimization.",
+    },
+    {
+      q: "Does Chanchal Verma work on retention and lifecycle campaigns?",
+      a: "Yes. Chanchal builds lifecycle content systems across push, WhatsApp, and SMS, and improves engagement with testing across hooks, timing, and message structure.",
+    },
+    {
+      q: "How can I hire Chanchal Verma for content strategy work?",
+      a: "Use the contact section to send an email for full-time, freelance, or consulting opportunities.",
+    },
+  ];
+
+  return (
+    <section
+      id="faq"
+      className="reveal"
+      style={{ paddingTop: "2.5rem", paddingBottom: "3.5rem", borderTop: "1px solid var(--border)" }}
+    >
+      <SectionHeading
+        eyebrow="FAQ"
+        title="Frequently Asked Questions"
+        subtitle="Quick answers for hiring and service fit."
+      />
+      <div style={{ marginTop: "1.75rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+        {faqs.map((item) => (
+          <details key={item.q} className="card" style={{ padding: "1rem 1.15rem" }}>
+            <summary style={{ cursor: "pointer", fontSize: "0.92rem", fontWeight: 600, color: "var(--night)" }}>
+              {item.q}
+            </summary>
+            <p style={{ marginTop: "0.7rem", fontSize: "0.88rem", lineHeight: 1.65, color: "var(--text-soft)" }}>
+              {item.a}
+            </p>
+          </details>
         ))}
       </div>
     </section>
