@@ -1,0 +1,7 @@
+services:
+  chanchal-cv:
+    image: yourdockerhub/chanchal-cv:${CHANCHAL_CV_TAG:-main}
+    container_name: chanchal-cv-3005
+    ports:
+      - "3005:3000"
+    restart: unless-stopped

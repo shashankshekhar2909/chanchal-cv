@@ -3,19 +3,19 @@ export const site = {
   location: "Bengaluru, India",
   role: "Copywriter | Social Media & Content Strategist",
   hero: {
-    headline: "Growth-Focused Content & Lifecycle Strategist",
+    headline: "Retention-Driven Content Strategist for Social and Lifecycle Growth",
     subheading:
-      "Retention Messaging • Social Content Strategy • Push & SMS Campaign Copy",
+      "Lifecycle Messaging • Social Storytelling • Conversion-Focused Content Systems",
     valueProp:
-      "I build conversion-first messaging systems across lifecycle and social channels. Expect measurable lifts and fast, clean execution.",
+      "I turn messaging into a measurable growth system across push, WhatsApp, SMS, social, and SEO. The focus is sharp strategy, clean execution, and content that compounds over time.",
     metricChips: [
       "Push CTR: 0.7% -> 2-3%",
-      "90+ posts/month (GIVA)",
+      "90+ posts/month",
       "Lifecycle: Push | WhatsApp | SMS",
-      "D2C + Fintech + Fashion",
+      "Consumer + commerce + growth",
     ],
     ctas: {
-      email: "mailto:being.chanchalv@gmail.com?subject=Interview%20%E2%80%93%20Content%20%26%20Social%20Role&body=Hi%20Chanchal%2C%0AI'm%20reaching%20out%20about%20a%20Content%2FSocial%20role%20at%20%5BCompany%5D.%0AWe%E2%80%99d%20love%20to%20discuss%20your%20experience%20with%20lifecycle%20messaging%20and%20social%20systems.%0A%E2%80%94%20%5BName%5D",
+      email: "mailto:being.chanchalv@gmail.com?subject=Interview%20%E2%80%93%20Content%20%26%20Social%20Role&body=Hi%20Chanchal%2C%0AI'm%20reaching%20out%20about%20a%20Content%2FSocial%20role.%0AWe%E2%80%99d%20love%20to%20discuss%20your%20experience%20with%20lifecycle%20messaging%20and%20social%20systems.%0A%E2%80%94%20%5BName%5D",
       caseStudies: "#case-studies",
       resume: "/resume.pdf",
     },
@@ -32,9 +32,9 @@ export const site = {
     {
       title: "Social & Community",
       bullets: [
-        "90+ posts/month at GIVA",
+        "90+ posts/month across campaign cycles",
         "Reels concepts + scripts + captions",
-        "Community-first IG + LinkedIn calendars",
+        "Community-first social calendars",
       ],
     },
     {
@@ -76,39 +76,30 @@ export const site = {
   ],
   certifications: [
     {
-      title: "Attract and Engage Customers with Digital Marketing",
-      issuer: "Google",
+      title: "Digital Marketing and Customer Engagement",
       issued: "Feb 2026",
-      credentialId: "F2HXQQTCFCWW",
-      credentialUrl: "",
     },
     {
-      title: "Foundations of Digital Marketing and E-commerce",
-      issuer: "Google",
+      title: "Digital Marketing and E-commerce Foundations",
       issued: "Aug 2025",
-      credentialId: "4SFK1EJESGSF",
-      credentialUrl: "",
     },
     {
       title: "Marketing and Advertising",
-      issuer: "MyCaptain",
       issued: "Oct 2020",
     },
     {
       title: "Blogging and Content Writing",
-      issuer: "MyCaptain",
       issued: "Jun 2019",
     },
     {
       title: "Creative Writing",
-      issuer: "MyCaptain",
       issued: "Jul 2019",
     },
   ],
   caseStudies: [
     {
-      slug: "snapmint-retention",
-      company: "Snapmint — Retention Messaging & A/B Testing for Lifecycle Content",
+      slug: "retention-testing-system",
+      project: "Lifecycle Retention System",
       role: "Content Writer",
       period: "Oct 2023 - Jul 2024",
       focus: "Retention Messaging + A/B Testing",
@@ -124,8 +115,8 @@ export const site = {
       outcome: "Push CTR improved from 0.7% to 2-3% through iterative testing.",
     },
     {
-      slug: "giva-content-ops",
-      company: "GIVA — High Volume Social Content Operations & Planning",
+      slug: "social-content-ops-engine",
+      project: "High-Volume Social Content Engine",
       role: "Content Strategist",
       period: "Feb 2022 - Jan 2023",
       focus: "High-volume Content Ops + Campaign Planning",
@@ -135,13 +126,13 @@ export const site = {
         "Built a content calendar system to ship 90+ posts/month.",
         "Led campaign planning with clear pillars and weekly themes.",
         "Wrote scripts, storyboards, and audio cues for creators.",
-        "Delivered Shopify launch copy for weekly drops.",
+        "Delivered launch copy for recurring product drops.",
       ],
       outcome: "Sustained high-volume publishing with consistent brand voice.",
     },
     {
-      slug: "reshamandi-seo",
-      company: "Reshamandi — SEO Content Strategy & Catalog Copy Optimization",
+      slug: "seo-catalog-conversion",
+      project: "SEO and Catalog Conversion Copy",
       role: "Creative Content Writer",
       period: "Feb 2023 - Oct 2023",
       focus: "SEO + Catalog Copy Optimization",
@@ -156,8 +147,8 @@ export const site = {
       outcome: "Engagement improved (metric available on request).",
     },
     {
-      slug: "nekbyjar-reels",
-      company: "Nek by JAR — Reels Scripting & Social Storytelling",
+      slug: "short-form-storytelling",
+      project: "Short-Form Storytelling System",
       role: "Content Writer",
       period: "Jul 2024 - Mar 2025",
       focus: "Reels + Social Storytelling",
@@ -174,8 +165,8 @@ export const site = {
     },
   ],
   about: [
-    "Industries: D2C, fintech, fashion, lifestyle",
-    "Strengths: retention copy, narrative systems, social storytelling",
+    "Strengths: retention copy, narrative systems, and social storytelling",
+    "Range: lifecycle messaging, SEO content, reels scripting, and campaign planning",
     "Working style: hypothesis -> test -> iterate",
     "Location: Bengaluru, India",
   ],
@@ -188,17 +179,15 @@ export const site = {
   contact: {
     email: "being.chanchalv@gmail.com",
     location: "Bengaluru, India",
-    linkedinLabel: "LinkedIn",
-    linkedinUrl: "https://www.linkedin.com/in/chanchal-verma/",
     mailtoInterview:
-      "mailto:being.chanchalv@gmail.com?subject=Interview%20%E2%80%93%20Content%20%26%20Social%20Role&body=Hi%20Chanchal%2C%0AI'm%20reaching%20out%20about%20a%20Content%2FSocial%20role%20at%20%5BCompany%5D.%0AWe%E2%80%99d%20love%20to%20discuss%20your%20experience%20with%20lifecycle%20messaging%20and%20social%20systems.%0A%E2%80%94%20%5BName%5D",
+      "mailto:being.chanchalv@gmail.com?subject=Interview%20%E2%80%93%20Content%20%26%20Social%20Role&body=Hi%20Chanchal%2C%0AI'm%20reaching%20out%20about%20a%20Content%2FSocial%20role.%0AWe%E2%80%99d%20love%20to%20discuss%20your%20experience%20with%20lifecycle%20messaging%20and%20social%20systems.%0A%E2%80%94%20%5BName%5D",
     mailtoSamples:
-      "mailto:being.chanchalv@gmail.com?subject=Requesting%20portfolio%20samples%20%E2%80%93%20%5BRole%5D%20at%20%5BCompany%5D&body=Hi%20Chanchal%2C%0AI'm%20requesting%20portfolio%20samples%20for%3A%0A%5B%20%5D%20Lifecycle%0A%5B%20%5D%20Social%2FReels%0A%5B%20%5D%20SEO%2FCatalog%0A%5B%20%5D%20Influencer%0A%0A%E2%80%94%20%5BName%5D",
+      "mailto:being.chanchalv@gmail.com?subject=Requesting%20portfolio%20samples%20%E2%80%93%20%5BRole%5D&body=Hi%20Chanchal%2C%0AI'm%20requesting%20portfolio%20samples%20for%3A%0A%5B%20%5D%20Lifecycle%0A%5B%20%5D%20Social%2FReels%0A%5B%20%5D%20SEO%2FCatalog%0A%5B%20%5D%20Influencer%0A%0A%E2%80%94%20%5BName%5D",
   },
   seo: {
     title: "Chanchal Verma — Content & Lifecycle Strategist | Push, Social, SEO",
     description:
-      "Portfolio of Chanchal Verma — Digital Content Strategist specializing in lifecycle content, retention messaging, push notification copy, social strategy, and SEO content for fintech, D2C, and fashion brands.",
+      "Portfolio of Chanchal Verma — Content strategist specializing in lifecycle content, retention messaging, push notification copy, social strategy, and SEO content.",
     ogImage: "/og-image.svg",
   },
 };

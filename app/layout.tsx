@@ -1,21 +1,52 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Fraunces, Manrope } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import "../styles/custom.scss";
 import { site } from "@/data/site";
+import AnimationProvider from "@/components/AnimationProvider";
 
-const display = Fraunces({ subsets: ["latin"], variable: "--font-display" });
-const body = Manrope({ subsets: ["latin"], variable: "--font-body" });
+const display = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["300", "400", "500", "600", "700"],
+});
+const body = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["300", "400", "500", "600"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://beingchanchal.com"),
   title: site.seo.title,
   description: site.seo.description,
+  applicationName: site.name,
+  alternates: {
+    canonical: "https://beingchanchal.com",
+  },
+  authors: [{ name: site.name }],
+  creator: site.name,
+  publisher: site.name,
+  category: "portfolio",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: site.seo.title,
     description: site.seo.description,
     url: "https://beingchanchal.com",
+    siteName: site.name,
+    locale: "en_US",
     images: [site.seo.ogImage],
     type: "website",
   },
@@ -24,8 +55,17 @@ export const metadata: Metadata = {
     title: site.seo.title,
     description: site.seo.description,
     images: [site.seo.ogImage],
+    creator: "@beingchanchal",
   },
   keywords: [
+    "chanchal verma",
+    "chanchal",
+    "chanchal verma content strategist",
+    "chanchal verma portfolio",
+    "content strategist portfolio",
+    "content strategist india",
+    "content strategy specialist",
+    "content stratagist",
     "content strategist",
     "content strategy",
     "lifecycle content specialist",
@@ -42,9 +82,9 @@ export const metadata: Metadata = {
     "engagement growth",
     "a/b testing messaging",
     "high volume content planning",
-    "d2c content expert",
-    "fintech content specialist",
-    "fashion & lifestyle content strategist",
+    "consumer content strategist",
+    "growth content specialist",
+    "conversion-focused copywriter",
   ],
 };
 
@@ -55,14 +95,31 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${body.variable} ${display.variable}`}>
-      <body className="bg-ink-900 text-sand-100 antialiased">
+      <body className="bg-cream text-charcoal antialiased">
         <Script id="schema-person" type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
             name: site.name,
+            alternateName: ["Chanchal", "Chanchal V"],
             url: "https://beingchanchal.com",
-            sameAs: [site.contact.linkedinUrl, "https://beingchanchal.com"],
+            email: site.contact.email,
+            homeLocation: {
+              "@type": "Place",
+              name: site.location,
+            },
+            knowsAbout: [
+              "Content Strategy",
+              "Lifecycle Messaging",
+              "Push Notification Copywriting",
+              "WhatsApp Campaign Messaging",
+              "SMS Marketing Content",
+              "Social Media Strategy",
+              "Reels Scripting",
+              "SEO Copywriting",
+              "Catalog Copy Optimization",
+            ],
+            sameAs: ["https://beingchanchal.com"],
             jobTitle: [
               "Content Strategist",
               "Lifecycle Content Specialist",
@@ -70,8 +127,17 @@ export default function RootLayout({
             ],
           })}
         </Script>
+        <Script id="schema-website" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: site.name,
+            url: "https://beingchanchal.com",
+            description: site.seo.description,
+          })}
+        </Script>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-4KL2L6RSXJ"
+          src="https://www.googletagmanager.com/gtag/js?id=G-EK12YHP9B0"
           strategy="afterInteractive"
         />
         <Script id="ga-init" strategy="afterInteractive">
@@ -79,10 +145,11 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-4KL2L6RSXJ');
+            gtag('config', 'G-EK12YHP9B0');
           `}
         </Script>
         {children}
+        <AnimationProvider />
       </body>
     </html>
   );
