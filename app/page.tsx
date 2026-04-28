@@ -267,6 +267,21 @@ function Hero() {
                 Resume ↗
               </TrackLink>
             </div>
+
+            <div
+              className="hero-animate-cta"
+              style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center", marginTop: "-1.75rem", marginBottom: "2.5rem", opacity: 0 }}
+            >
+              <span style={{ fontSize: "0.68rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-muted)", fontWeight: 700 }}>
+                Find me on
+              </span>
+              <TrackLink href={site.contact.linkedin} target="_blank" rel="noreferrer" event="cta_hero_linkedin" className="nav-link">
+                LinkedIn
+              </TrackLink>
+              <TrackLink href={site.contact.pinterest} target="_blank" rel="noreferrer" event="cta_hero_pinterest" className="nav-link">
+                Pinterest
+              </TrackLink>
+            </div>
           </div>
 
           {/* RIGHT: bento impact grid */}
