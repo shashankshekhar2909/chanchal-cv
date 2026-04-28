@@ -813,6 +813,17 @@ function Contact() {
               <p style={{ fontSize: "0.58rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(250,251,255,0.38)", marginBottom: "0.35rem" }}>Location</p>
               <p style={{ fontSize: "1rem", color: "#FAFBFF" }}>{site.contact.location}</p>
             </div>
+            <div>
+              <p style={{ fontSize: "0.58rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(250,251,255,0.38)", marginBottom: "0.35rem" }}>Social</p>
+              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                <TrackLink href={site.contact.linkedin} target="_blank" rel="noreferrer" event="cta_contact_linkedin" className="nav-link">
+                  LinkedIn
+                </TrackLink>
+                <TrackLink href={site.contact.pinterest} target="_blank" rel="noreferrer" event="cta_contact_pinterest" className="nav-link">
+                  Pinterest
+                </TrackLink>
+              </div>
+            </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.625rem" }}>
               <TrackLink href={site.contact.mailtoInterview} target="_blank" rel="noreferrer"
                 event="cta_hire_me" className="btn-accent btn-magnet">
@@ -846,6 +857,8 @@ function SiteFooter() {
         </p>
         <div style={{ display: "flex", gap: "1.25rem" }}>
           <TrackLink href={site.contact.mailtoInterview} target="_blank" rel="noreferrer" event="cta_footer_email" className="nav-link">Email</TrackLink>
+          <TrackLink href={site.contact.linkedin} target="_blank" rel="noreferrer" event="cta_footer_linkedin" className="nav-link">LinkedIn</TrackLink>
+          <TrackLink href={site.contact.pinterest} target="_blank" rel="noreferrer" event="cta_footer_pinterest" className="nav-link">Pinterest</TrackLink>
           <TrackLink href={site.contact.mailtoSamples} target="_blank" rel="noreferrer" event="cta_footer_samples" className="nav-link">Samples</TrackLink>
           <TrackLink href={site.hero.ctas.resume} target="_blank" rel="noreferrer" event="cta_footer_resume" className="nav-link">Resume</TrackLink>
         </div>

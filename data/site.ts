@@ -17,7 +17,7 @@ export const site = {
     ctas: {
       email: "mailto:being.chanchalv@gmail.com?subject=Interview%20%E2%80%93%20Content%20%26%20Social%20Role&body=Hi%20Chanchal%2C%0AI'm%20reaching%20out%20about%20a%20Content%2FSocial%20role.%0AWe%E2%80%99d%20love%20to%20discuss%20your%20experience%20with%20lifecycle%20messaging%20and%20social%20systems.%0A%E2%80%94%20%5BName%5D",
       caseStudies: "#case-studies",
-      resume: "/resume.pdf",
+      resume: "/Chanchal_Verma_Resume.pdf",
     },
   },
   resultsSnapshot: [
@@ -179,6 +179,8 @@ export const site = {
   contact: {
     email: "being.chanchalv@gmail.com",
     location: "Bengaluru, India",
+    linkedin: "https://www.linkedin.com/in/chanchal-verma/",
+    pinterest: "https://in.pinterest.com/zillenniallife/",
     mailtoInterview:
       "mailto:being.chanchalv@gmail.com?subject=Interview%20%E2%80%93%20Content%20%26%20Social%20Role&body=Hi%20Chanchal%2C%0AI'm%20reaching%20out%20about%20a%20Content%2FSocial%20role.%0AWe%E2%80%99d%20love%20to%20discuss%20your%20experience%20with%20lifecycle%20messaging%20and%20social%20systems.%0A%E2%80%94%20%5BName%5D",
     mailtoSamples:

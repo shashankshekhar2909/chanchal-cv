@@ -145,7 +145,11 @@ export default function RootLayout({
               "SEO Copywriting",
               "Catalog Copy Optimization",
             ],
-            sameAs: ["https://www.beingchanchal.com"],
+            sameAs: [
+              "https://www.beingchanchal.com",
+              site.contact.linkedin,
+              site.contact.pinterest,
+            ],
             jobTitle: [
               "Content Strategist",
               "Lifecycle Content Specialist",
